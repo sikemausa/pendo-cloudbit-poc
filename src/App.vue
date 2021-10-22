@@ -4,7 +4,10 @@
 </template>
 
 <script>
+/* eslint-disable */
 import HelloWorld from './components/HelloWorld.vue'
+
+pendo.initialize({"apiKey":"3f6764dd-1dd1-418f-6bbf-5011bc657b20","visitor":{"id":"_PENDO_T_nyJlG83kiiW","language":"en_US"},"account":{"id":""}})
 
 export default {
   name: 'App',

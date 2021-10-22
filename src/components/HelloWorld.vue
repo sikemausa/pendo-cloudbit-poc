@@ -31,10 +31,31 @@
 </template>
 
 <script>
+const clearbit = require('clearbit')('sk_8cbe6f49a72e37e50adf02d4bbf12a58');
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+
+  created() {
+    this.clearbitReveal();
+  },
+
+  methods: {
+    async clearbitReveal() {
+      try {
+        const companyData = (await clearbit.Reveal.find({ ip: '52.129.35.148' })).company.tech;
+
+        if (companyData.includes('splunk')) {
+          window.pendo.showGuideByName('splunk');
+        }
+
+      } catch (error) {
+        console.log(error);
+      }
+    }
   }
 }
 </script>
